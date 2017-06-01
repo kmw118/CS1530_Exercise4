@@ -75,13 +75,59 @@ public class TicTacToe
 			}
 			else 
 			{
-				if(source != currentButton)
-					currentButton.setEnabled(false);
-				
+				if(source != currentButton) currentButton.setEnabled(false);
+			
 				currentButton = source;
 				String currentText = source.getText();
-				if(currentText.equals("X")) source.setText("O");
+				if(currentText.equals("_")) source.setText("X");
+				else if(currentText.equals("X")) source.setText("O");
 				else source.setText("X");
+			}
+			
+			//check to see if there is three in a row
+				
+			
+			System.out.println(_buttons[0].getText() + " " +_buttons[1].getText() + " " + _buttons[2].getText());
+			if((_buttons[0].getText().equals(_buttons[1].getText()) && _buttons[1].getText().equals(_buttons[2].getText()) && _buttons[0].getText().equals("X"))
+			|| (_buttons[0].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[8].getText()) && _buttons[0].getText().equals("X"))
+			|| (_buttons[0].getText().equals(_buttons[3].getText()) && _buttons[3].getText().equals(_buttons[6].getText()) && _buttons[0].getText().equals("X"))
+			|| (_buttons[1].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[7].getText()) && _buttons[1].getText().equals("X"))
+			|| (_buttons[2].getText().equals(_buttons[5].getText()) && _buttons[5].getText().equals(_buttons[8].getText()) && _buttons[2].getText().equals("X"))
+			|| (_buttons[2].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[6].getText()) && _buttons[2].getText().equals("X"))
+			|| (_buttons[3].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[5].getText()) && _buttons[3].getText().equals("X"))
+			|| (_buttons[6].getText().equals(_buttons[7].getText()) && _buttons[7].getText().equals(_buttons[8].getText()) && _buttons[6].getText().equals("X")))
+			{
+				//X's win
+				JFrame frame = new JFrame();
+				JOptionPane.showMessageDialog(frame, "X's Won!\nStarting a new game automatically.");
+				currentButton = new JButton();
+				for(int i = 0; i < 9; i++)
+				{
+					_buttons[i].setText("_");
+					_buttons[i].setEnabled(true);
+				}
+			}
+			else
+			{
+				if((_buttons[0].getText().equals(_buttons[1].getText()) && _buttons[1].getText().equals(_buttons[2].getText()) && _buttons[0].getText().equals("O"))
+				|| (_buttons[0].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[8].getText()) && _buttons[0].getText().equals("O"))
+				|| (_buttons[0].getText().equals(_buttons[3].getText()) && _buttons[3].getText().equals(_buttons[6].getText()) && _buttons[0].getText().equals("O"))
+				|| (_buttons[1].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[7].getText()) && _buttons[0].getText().equals("O"))
+				|| (_buttons[2].getText().equals(_buttons[5].getText()) && _buttons[5].getText().equals(_buttons[8].getText()) && _buttons[0].getText().equals("O"))
+				|| (_buttons[2].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[6].getText()) && _buttons[0].getText().equals("O"))
+				|| (_buttons[3].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[5].getText()) && _buttons[0].getText().equals("O"))
+				|| (_buttons[6].getText().equals(_buttons[7].getText()) && _buttons[7].getText().equals(_buttons[8].getText()) && _buttons[0].getText().equals("O")))
+				{
+					//O's win
+					JFrame frame = new JFrame();
+					JOptionPane.showMessageDialog(frame, "O's Won!\nStarting a new game automatically.");
+					currentButton = new JButton();
+					for(int i = 0; i < 9; i++)
+					{
+						_buttons[i].setText("_");
+						_buttons[i].setEnabled(true);
+					}
+				}
 			}
 		}
    	 }
