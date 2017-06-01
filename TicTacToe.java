@@ -1,3 +1,10 @@
+/**
+  * Game is formatted, so that two players can play.
+  * The first time a square is clicked, it will show an X; the next square clicked will be an O
+  * For the purpose of this assignment, however, a button can be pressed multiple times alternating between X's and O's
+  * even though this should not be a feature of an actual game of Tic-Tac-Toe
+*/
+
 import java.awt.*;
 import java.awt.event.*; 
 import javax.swing.*;
