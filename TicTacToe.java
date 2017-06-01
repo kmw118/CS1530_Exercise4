@@ -4,17 +4,17 @@ import javax.swing.*;
 
 public class TicTacToe 
 {
-    JFrame _frame = new JFrame("Tic-Tac-Toe");
+    	JFrame _frame = new JFrame("Tic-Tac-Toe");
 	JButton[] _buttons = new JButton[9];
 	JPanel _ttt = new JPanel();
 	JPanel _newPanel = new JPanel();
 	JButton currentButton = new JButton();
 	JButton newGame = new JButton();
 
-    public static void main(String[] args)
+	public static void main(String[] args)
 	{
 		new TicTacToe(); 
-    }
+	}
 	
 	public TicTacToe()
 	{
@@ -84,5 +84,5 @@ public class TicTacToe
 				else source.setText("X");
 			}
 		}
-    }
+   	 }
 }
