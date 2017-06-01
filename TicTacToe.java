@@ -1,4 +1,4 @@
-/**
+/*
   * Game is formatted, so that two players can play.
   * The first time a square is clicked, it will show an X; the next square clicked will be an O
   * For the purpose of this assignment, however, a button can be pressed multiple times alternating between X's and O's
