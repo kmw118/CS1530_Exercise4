@@ -10,11 +10,11 @@ public class TicTacToe
 	JPanel _newPanel = new JPanel();
 	JButton currentButton = new JButton();
 	JButton newGame = new JButton();
-
-    public static void main(String[] args)
+	
+	public static void main(String[] args)
 	{
 		new TicTacToe(); 
-    }
+	}
 	
 	public TicTacToe()
 	{
@@ -55,6 +55,7 @@ public class TicTacToe
 		// THIS IS A COMMON SOURCE OF BUGS!
 		_frame.setVisible(true);
 	}
+	
 	class ButtonListener implements ActionListener 
 	{
 		// Every time we click the button, it will perform
@@ -130,5 +131,5 @@ public class TicTacToe
 				}
 			}
 		}
-    }
+    	}
 }
