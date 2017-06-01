@@ -4,17 +4,17 @@ import javax.swing.*;
 
 public class TicTacToe 
 {
-    	JFrame _frame = new JFrame("Tic-Tac-Toe");
+    JFrame _frame = new JFrame("Tic-Tac-Toe");
 	JButton[] _buttons = new JButton[9];
 	JPanel _ttt = new JPanel();
 	JPanel _newPanel = new JPanel();
 	JButton currentButton = new JButton();
 	JButton newGame = new JButton();
 
-	public static void main(String[] args)
+    public static void main(String[] args)
 	{
 		new TicTacToe(); 
-	}
+    }
 	
 	public TicTacToe()
 	{
@@ -77,17 +77,17 @@ public class TicTacToe
 			{
 				if(source != currentButton) currentButton.setEnabled(false);
 			
-				currentButton = source;
-				String currentText = source.getText();
-				if(currentText.equals("_")) source.setText("X");
-				else if(currentText.equals("X")) source.setText("O");
+				String lastTurn = currentButton.getText();
+				
+				if(lastTurn.equals("X")) source.setText("O");
+				else if(lastTurn.equals("O")) source.setText("X");
 				else source.setText("X");
+				
+				currentButton = source;
 			}
 			
 			//check to see if there is three in a row
 				
-			
-			System.out.println(_buttons[0].getText() + " " +_buttons[1].getText() + " " + _buttons[2].getText());
 			if((_buttons[0].getText().equals(_buttons[1].getText()) && _buttons[1].getText().equals(_buttons[2].getText()) && _buttons[0].getText().equals("X"))
 			|| (_buttons[0].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[8].getText()) && _buttons[0].getText().equals("X"))
 			|| (_buttons[0].getText().equals(_buttons[3].getText()) && _buttons[3].getText().equals(_buttons[6].getText()) && _buttons[0].getText().equals("X"))
@@ -112,11 +112,11 @@ public class TicTacToe
 				if((_buttons[0].getText().equals(_buttons[1].getText()) && _buttons[1].getText().equals(_buttons[2].getText()) && _buttons[0].getText().equals("O"))
 				|| (_buttons[0].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[8].getText()) && _buttons[0].getText().equals("O"))
 				|| (_buttons[0].getText().equals(_buttons[3].getText()) && _buttons[3].getText().equals(_buttons[6].getText()) && _buttons[0].getText().equals("O"))
-				|| (_buttons[1].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[7].getText()) && _buttons[0].getText().equals("O"))
-				|| (_buttons[2].getText().equals(_buttons[5].getText()) && _buttons[5].getText().equals(_buttons[8].getText()) && _buttons[0].getText().equals("O"))
-				|| (_buttons[2].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[6].getText()) && _buttons[0].getText().equals("O"))
-				|| (_buttons[3].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[5].getText()) && _buttons[0].getText().equals("O"))
-				|| (_buttons[6].getText().equals(_buttons[7].getText()) && _buttons[7].getText().equals(_buttons[8].getText()) && _buttons[0].getText().equals("O")))
+				|| (_buttons[1].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[7].getText()) && _buttons[1].getText().equals("O"))
+				|| (_buttons[2].getText().equals(_buttons[5].getText()) && _buttons[5].getText().equals(_buttons[8].getText()) && _buttons[2].getText().equals("O"))
+				|| (_buttons[2].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[6].getText()) && _buttons[2].getText().equals("O"))
+				|| (_buttons[3].getText().equals(_buttons[4].getText()) && _buttons[4].getText().equals(_buttons[5].getText()) && _buttons[3].getText().equals("O"))
+				|| (_buttons[6].getText().equals(_buttons[7].getText()) && _buttons[7].getText().equals(_buttons[8].getText()) && _buttons[6].getText().equals("O")))
 				{
 					//O's win
 					JFrame frame = new JFrame();
@@ -130,5 +130,5 @@ public class TicTacToe
 				}
 			}
 		}
-   	 }
+    }
 }
