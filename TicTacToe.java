@@ -35,7 +35,7 @@ public class TicTacToe
 		_frame.add(_newPanel, BorderLayout.SOUTH);
 		
 		for (int j=0; j<9; j++)
-		{
+		{ 
 			// Make a new button in the array location with text "_"
 			_buttons[j] = new JButton("_");
 			
